@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import Cookies from 'js-cookie';
-
+// import { setAppToken } from './infrastructure/axios';
 import { searchRecentlyWordAPI, searchHotWordAPI } from './api/search';
 
 import './App.css';
 
 const webToken = '0gUT0RgxqEn3nkaMV515amGcJ/RhtuDnAorgpipeardS/+fsDUCp0vW30A9nSh7s2AizxAFRBbyDHdHXPi5mRSOGmJMOGYBoocqIu4kdqxEOz8Osw8jyqtd2JB8lJiAV2127RKPEfr/oRcHDG+77ooYRqbdsmjmWsRTaglBm7GV/4PL6vzcpn5wO2Y+1U5aodgjqCLj4RiCZ563FaHH8ASMjgslUcbZ6lvj/TQ8mHRM=';
+// const appToken = 'b47ff90849f74b48b0d0b21072909139';
 
 function App() {
   const currentToken = Cookies.get('USER');
@@ -13,9 +14,9 @@ function App() {
   const [response, setResponse] = useState(null);
   const handleLogin = () => {
     if (isLogin) {
-      Cookies.remove('USER');
+      Cookies.remove('USER', { domain: '.wishwingz.co.kr' });
     } else {
-      Cookies.set('USER', webToken);
+      Cookies.set('USER', webToken, { expires: 7, domain: '.wishwingz.co.kr' });
     }
     
     setLogin((prev) => !prev);
@@ -49,6 +50,11 @@ function App() {
 
   return (
     <div className="App">
+      <p>
+        먼저 `/etc/hosts` 설정을 해주세요.<br/>
+        `127.0.0.1  local.wishwingz.co.kr`<br/>
+        `3.35.228.39  api.wishwingz.co.kr`
+      </p>
       <div className="section">
         <div>일반 고객 계정, 타투이스트 연동 없음</div>
         <button type="button" onClick={handleLogin}>
