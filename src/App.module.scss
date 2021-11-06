@@ -1,0 +1,44 @@
+.App {
+  padding: 30px;
+}
+
+.gnb {
+  height: 50px;
+  padding: 0 24px;
+  border-bottom: 1px solid #d0d0d0;
+  
+  ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-right: 20px;
+
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #666d75;
+
+        &:visited,
+        &:active {
+          color: #666d75;
+        }
+
+        &:global(.active) {
+          font-weight: 700;
+          color: #2b96ed;
+        }
+      }
+    }
+  }
+}
+
+.contents {
+  padding: 30px 24px;
+}

@@ -1,79 +1,40 @@
-import { useState } from 'react';
-import Cookies from 'js-cookie';
-// import { setAppToken } from './infrastructure/axios';
-import { searchRecentlyWordAPI, searchHotWordAPI } from './api/search';
+import { NavLink, Routes, Route, Navigate } from 'react-router-dom';
+import MobileWeb from './pages/mobileweb/MobileWeb';
+import CORS from './pages/cors/CORS';
 
-import './App.css';
-
-const webToken = '0gUT0RgxqEn3nkaMV515amGcJ/RhtuDnAorgpipeardS/+fsDUCp0vW30A9nSh7s2AizxAFRBbyDHdHXPi5mRSOGmJMOGYBoocqIu4kdqxEOz8Osw8jyqtd2JB8lJiAV2127RKPEfr/oRcHDG+77ooYRqbdsmjmWsRTaglBm7GV/4PL6vzcpn5wO2Y+1U5aodgjqCLj4RiCZ563FaHH8ASMjgslUcbZ6lvj/TQ8mHRM=';
-// const appToken = 'b47ff90849f74b48b0d0b21072909139';
+import styles from './App.module.scss';
 
 function App() {
-  const currentToken = Cookies.get('USER');
-  const [isLogin, setLogin] = useState(Boolean(currentToken));
-  const [response, setResponse] = useState(null);
-  const handleLogin = () => {
-    if (isLogin) {
-      Cookies.remove('USER', { domain: '.wishwingz.co.kr' });
-    } else {
-      Cookies.set('USER', webToken, { expires: 7, domain: '.wishwingz.co.kr' });
-    }
-    
-    setLogin((prev) => !prev);
-  }
-  const handleSearchRecent = async () => {
-    let content;
-
-    try {
-      const { data } = await searchRecentlyWordAPI();
-
-      content = data;
-    } catch (e) {
-      content = e;
-    }
-
-    setResponse(JSON.stringify(content, null, 4));
-  }
-  const handleSearchHot = async () => {
-    let content;
-
-    try {
-      const { data } = await searchHotWordAPI();
-
-      content = data;
-    } catch (e) {
-      content = e;
-    }
-
-    setResponse(JSON.stringify(content, null, 4));
-  }
-
   return (
-    <div className="App">
-      <p>
-        먼저 `/etc/hosts` 설정을 해주세요.<br/>
-        `127.0.0.1  local.wishwingz.co.kr`<br/>
-        `3.35.228.39  api.wishwingz.co.kr`
-      </p>
-      <div className="section">
-        <div>일반 고객 계정, 타투이스트 연동 없음</div>
-        <button type="button" onClick={handleLogin}>
-          {isLogin ? '로그아웃' : '로그인'}
-        </button>
-      </div>
-      <div className="section">
-        <div>(로그인)/api/web/v1/search/search-recently-word</div>
-        <button type="button" onClick={handleSearchRecent}>최근 검색 단어 목록 호출</button>
-      </div>
-      <div className="section">
-        <div>(비로그인)/api/web/v1/search/search-hot-word</div>
-        <button type="button" onClick={handleSearchHot}>인기 검색 단어 목록 호출</button>
-      </div>
-      <div className="respBox">
-        {response}
+    <div>
+      <header className={styles.gnb}>
+        <ul>
+          <li>
+            <NavLink to="/mobile-web">모바일 웹</NavLink>
+          </li>
+          <li>
+            <NavLink to="/desktop-web">데스크탑 웹</NavLink>
+          </li>
+          <li>
+            <NavLink to="/mobile-app">앱</NavLink>
+          </li>
+          <li>
+            <NavLink to="/admin">어드민</NavLink>
+          </li>
+          <li>
+            <NavLink to="/cors">CORS 테스트</NavLink>
+          </li>
+        </ul>
+      </header>
+      <div className={styles.contents}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/mobile-web" />} />
+          <Route path="/mobile-web" element={<MobileWeb />} />
+          <Route path="/cors" element={<CORS />} />
+        </Routes>
       </div>
     </div>
-  );
+  )
 }
 
 export default App;

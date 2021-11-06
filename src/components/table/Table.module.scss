@@ -1,0 +1,20 @@
+.table {
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 1px solid #ced4da;
+  }
+}
+
+.action {
+  width: 100px;
+}
+
+.id {
+  width: 90px;
+}
