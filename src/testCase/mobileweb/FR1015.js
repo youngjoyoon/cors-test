@@ -1,7 +1,7 @@
 
 import { loginUserByEmail } from 'api/__fixtures__/user';
 import { getRecentTattooAPI } from 'api/tattoo';
-import { getFavoriteTattooAPI, toggleFavoriteTattoo } from 'api/favorite';
+import { getFavoriteTattooAPI, toggleFavoriteTattooAPI } from 'api/favorite';
 
 export const TC1028= () => {
   const query = {
@@ -49,7 +49,7 @@ export const TC1029 = () => {
     const toggleQuery = {
       tattooId: id,
     };
-    const { data: resp } = await toggleFavoriteTattoo(toggleQuery);
+    const { data: resp } = await toggleFavoriteTattooAPI(toggleQuery);
 
     logout();
 

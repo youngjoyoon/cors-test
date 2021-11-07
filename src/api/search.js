@@ -26,6 +26,16 @@ export async function searchRecentlyWordAPI() {
   return await axiosInstance.get('/web/v1/search/search-recently-word');
 }
 
+export async function searchRecentlyTattooAPI(option) {
+  const query = stringify({
+    page: option.page,
+    size: option.size,
+    sort: option.sort,
+  });
+
+  return await axiosInstance.get(`/web/v1/search/search-recently-tattoo?${query}`);
+}
+
 export async function searchHotWordAPI() {
   return await axiosInstance.get('/web/v1/search/search-hot-word');
 }
