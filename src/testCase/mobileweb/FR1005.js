@@ -1,16 +1,21 @@
 import { termsSearchAPI, termsAgreeAPI } from 'api/terms';
-import { userFixtureByEmail, termsSearchFixture, termsAgreeFixture } from '../__fixtures__';
+import { userFixtureByEmail } from 'api/__fixtures__/user';
 
 // 약관 조회 - 회원가입 약관
 export const TC1005 = () => {
-  const searchFixture = termsSearchFixture({ type: 'JOIN' });
+  const payload = {
+    type: 'JOIN',
+    latest: true,
+  };
 
   const execute = async () => {
-    const { data } = await termsSearchAPI(searchFixture.payload);
+    const { data: resp } = await termsSearchAPI(payload);
 
     return {
-      input: searchFixture.payload,
-      output: data, 
+      input: {
+        query: payload,
+      },
+      output: resp, 
     }
   }
 
@@ -25,14 +30,19 @@ export const TC1005 = () => {
 
 // 약관 조회 - 개인정보보호 약관
 export const TC1006 = () => {
-  const searchFixture = termsSearchFixture({ type: 'PRIVACY' });
+  const payload = {
+    type: 'PRIVACY',
+    latest: true,
+  };
 
   const execute = async () => {
-    const { data } = await termsSearchAPI(searchFixture.payload);
+    const { data: resp } = await termsSearchAPI(payload);
 
     return {
-      input: searchFixture.payload,
-      output: data, 
+      input: {
+        query: payload,
+      },
+      output: resp, 
     }
   }
 
@@ -47,28 +57,34 @@ export const TC1006 = () => {
 
 // 회원가입 약관 동의
 export const TC1007 = () => {
-  const userFixture = userFixtureByEmail('qa01@tatoo.com');
-  const searchFixture = termsSearchFixture({ type: 'JOIN' });
+  const userFixture = userFixtureByEmail('qa01@tattoo.com');
+  const payload = {
+    type: 'JOIN',
+    latest: true,
+  };
 
   const execute = async () => {
-    const { data } = await termsSearchAPI(searchFixture.payload);
-    const { content } = data;
+    const { data: searchResp } = await termsSearchAPI(payload);
+    const { content } = searchResp;
     const [firstContent] = content;
-    const { id: termId, type: termType, category } = firstContent || {};
+    const { id: termsId, type: termType, category } = firstContent || {};
     const { memberId } = userFixture;
 
-    const agreeFixture = termsAgreeFixture({
+    const agreePayload = {
       memberId,
-      termId,
+      termsId,
       termType,
       category,
-    });
+    }
 
-    const { data: agreeData } = await termsAgreeAPI(termId, agreeFixture.payload);
+    const { data: agreeResp } = await termsAgreeAPI(agreePayload);
 
     return {
-      input: agreeFixture.payload,
-      output: agreeData, 
+      input: {
+        pathValue: { termsId },
+        requestBody: agreePayload,
+      },
+      output: agreeResp, 
     }
   }
 

@@ -1,11 +1,8 @@
 import Table from 'components/table/Table';
 import TestCase from 'components/testCase/TestCase';
+import * as cases from 'testCase/mobileweb';
 
-const testCases = [
-  'TC1005',
-  'TC1006',
-  'TC1007',
-];
+const testCases = Object.keys(cases);
 
 export default function MobileWeb() {
   return (
