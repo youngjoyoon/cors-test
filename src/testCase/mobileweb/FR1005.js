@@ -75,7 +75,7 @@ export const TC1007 = () => {
   return {
     id: 'FR-1005',
     tid: 'TC-1007',
-    desc: '회원가입 약관을 동의처리한다',
+    desc: '회원가입 약관을 동의 처리한다',
     condition: '회원가입 후에만 가능하다.',
     execute,
   }

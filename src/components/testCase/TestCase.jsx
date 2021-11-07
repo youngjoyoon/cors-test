@@ -5,6 +5,7 @@ import TableRow from '../table/TableRow';
 
 export default function TestCase(props) {
   const { testCaseId, option } = props;
+  const [error, setError] = useState(null);
   const [input, setInput] = useState(null);
   const [output, setoutput] = useState(null);
   const testCase = createTestCase(testCaseId, option);
@@ -17,10 +18,16 @@ export default function TestCase(props) {
     }
 
     (async () => {
-      const { input, output } = await execute();
+      try {
+        const { input, output } = await execute();
 
-      setInput(input);
-      setoutput(output);
+        setoutput(output);
+        setInput(input);
+        setError(null);
+      } catch (e) {
+        setInput(e.stack ?? e.message);
+        setError(e);
+      }
     })();
   }, [testCase]);
 
@@ -40,6 +47,7 @@ export default function TestCase(props) {
       condition={condition}
       input={input}
       output={output}
+      hasError={Boolean(error)}
       onClick={handleClick}
     />
   );

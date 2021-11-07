@@ -13,9 +13,9 @@ export default function CORS() {
   
   const handleLogin = () => {
     if (isLogin) {
-      Cookies.remove('USER', { domain: '.wishwingz.co.kr' });
+      Cookies.remove('USER', { domain: '.jlventures.io' });
     } else {
-      Cookies.set('USER', webToken, { expires: 7, domain: '.wishwingz.co.kr' });
+      Cookies.set('USER', webToken, { expires: 7, domain: '.jlventures.io' });
     }
     
     setLogin((prev) => !prev);
@@ -51,8 +51,7 @@ export default function CORS() {
     <div id="CORS">
       <p>
         먼저 `/etc/hosts` 설정을 해주세요.<br/>
-        `127.0.0.1  local.wishwingz.co.kr`<br/>
-        `3.35.228.39  api.wishwingz.co.kr`
+        `127.0.0.1  local.jlventures.io`
       </p>
       <div className="section">
         <div>일반 고객 계정, 타투이스트 연동 없음</div>

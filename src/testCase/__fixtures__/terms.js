@@ -2,7 +2,6 @@ export const termsSearchFixture = (option) => {
   const { type } = option;
 
   return {
-    member: null, // 비회원
     payload: {
       query: {
         type,
@@ -17,7 +16,6 @@ export const termsAgreeFixture = (option) => {
   const { memberId, termId, termType, category } = option;
 
   return {
-    member: 'qa01@tatoo.com',
     payload: {
       query: null,
       data: {
