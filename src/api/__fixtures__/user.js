@@ -18,7 +18,7 @@ const users = [
     appToken: 'ca277047bf574483a1a500f5bcd863a7',
   },
   {
-    memberId: 3,
+    memberId: 4,
     email: 'qa03@tattoo.com',
     desc: '일반 고객 + 타투이스트 2개',
     uuid: '1389uds1jsadjs3akasdkl4sd',

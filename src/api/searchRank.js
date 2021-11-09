@@ -8,7 +8,6 @@ export async function searchRankTattooAPI(option) {
     genreTypes: [...option.genreTypes],
     page: option.page,
     size: option.size,
-    sort: [...option.sort],
   });
 
   return await axiosInstance.get(`/web/v1/search/rank/search-tattoo?${query}`);
@@ -21,7 +20,6 @@ export async function searchRankTattooistAPI(option) {
     genreTypes: [...option.genreTypes],
     page: option.page,
     size: option.size,
-    sort: [...option.sort],
   });
 
   return await axiosInstance.get(`/web/v1/search/rank/search-tattooist?${query}`);

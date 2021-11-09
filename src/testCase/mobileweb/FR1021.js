@@ -1,6 +1,6 @@
 import { searchReviewByKeywordAPI } from 'api/review';
 
-export const TC1045 = () => {
+export const FR1021_1 = () => {
   const query = {
     keyword: '친절친절',
     page: 1,
@@ -32,14 +32,13 @@ export const TC1045 = () => {
 
   return {
     id: 'FR-1021',
-    tid: 'TC-1045',
     desc: '검색어로 리뷰를 조회한다.',
     condition: '',
     execute,
   }
 }
 
-export const TC1046 = () => {
+export const FR1021_2 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -71,14 +70,13 @@ export const TC1046 = () => {
 
   return {
     id: 'FR-1021',
-    tid: 'TC-1046',
     desc: '리뷰를 조회한다. -> 지역 필터를 서울로 설정한다.',
     condition: '',
     execute,
   }
 }
 
-export const TC1047 = () => {
+export const FR1021_3 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -110,14 +108,13 @@ export const TC1047 = () => {
 
   return {
     id: 'FR-1021',
-    tid: 'TC-1047',
     desc: '리뷰를 조회한다. -> 장르 필터를 반영구로 설정한다.',
     condition: '',
     execute,
   }
 }
 
-export const TC1048 = () => {
+export const FR1021_4 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -149,7 +146,6 @@ export const TC1048 = () => {
 
   return {
     id: 'FR-1021',
-    tid: 'TC-1048',
     desc: '리뷰를 조회한다. -> 부위 필터를 팔로 설정한다.',
     condition: '',
     execute,

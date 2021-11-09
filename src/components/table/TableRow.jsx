@@ -12,7 +12,7 @@ export default function TableRow(props) {
   return (
     <tr className={hasError ? styles.hasError : ''}>
       <td className={styles.action}>
-        <button type="button" onClick={handleClick}>테스트</button>
+        {onClick && <button type="button" onClick={handleClick}>테스트</button>}
       </td>
       <td className={styles.id}>{tid}</td>
       <td className={styles.id}>{id}</td>

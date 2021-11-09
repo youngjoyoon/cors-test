@@ -5,7 +5,6 @@ export async function getFavoriteTattooAPI(option) {
   const query = stringify({
     page: option.page,
     size: option.size,
-    sort: option.sort,
   });
 
   return await axiosInstance.get(`/web/v1/favorite/search-tattoo?${query}`);
@@ -15,7 +14,6 @@ export async function getFavoriteTattooistAPI(option) {
   const query = stringify({
     page: option.page,
     size: option.size,
-    sort: option.sort,
   });
 
   return await axiosInstance.get(`/web/v1/favorite/search-tattooist?${query}`);

@@ -13,7 +13,6 @@ export async function getReviewByTattooAPI(option) {
     reviewOrderType: option.reviewOrderType,
     page: option.page,
     size: option.size,
-    sort: [...option.sort],
   });
 
   return await axiosInstance.get(`/web/v1/review/search-tattoo?${query}`);
@@ -22,20 +21,20 @@ export async function getReviewByTattooAPI(option) {
 export async function getReviewByTattooistAPI(option) {
   const query = stringify({
     tattooistId: option.tattooistId,
+    reviewOrderType: option.reviewOrderType,
     page: option.page,
     size: option.size,
-    sort: [...option.sort],
   });
 
   return await axiosInstance.get(`/web/v1/review/search-tattooist?${query}`);
 }
 
 export async function searchReviewByKeywordAPI(option) {
-  const query = {
+  const query = stringify({
     keyword: option.keyword,
     page: option.page,
     size: option.size,
-  };
+  });
   const data = {
     filterAreaTypes: [...option.filterAreaTypes],
     genreTypes: [...option.genreTypes],
@@ -48,7 +47,7 @@ export async function searchReviewByKeywordAPI(option) {
     sameDayReservation: option.sameDayReservation,
   };
 
-  return await axiosInstance.post(`/web/v1/review/search-filter?${stringify(query)}`, data);
+  return await axiosInstance.post(`/web/v1/review/search-filter?${query}`, data);
 }
 
 export async function createReviewAPI(option) {
@@ -70,6 +69,7 @@ export async function createReviewAPI(option) {
 }
 
 export async function modifyReviewAPI(option) {
+  const query = stringify({ reviewId: option.reviewId });
   const data = {
     tattooistId: option.tattooistId,
     starSatisfaction: option.starSatisfaction,
@@ -84,19 +84,20 @@ export async function modifyReviewAPI(option) {
     reviewImages: [],
   }
 
-  return await axiosInstance.put(`/web/v1/review/${option.reviewId}`, data);
+  return await axiosInstance.put(`/web/v1/review/${option.reviewId}?${query}`, data);
 }
 
 export async function deleteReviewAPI(option) {
-  return await axiosInstance.delete(`/web/v1/review/${option.reviewId}`);
+  const query = stringify({ reviewId: option.reviewId });
+
+  return await axiosInstance.delete(`/web/v1/review/${option.reviewId}?${query}`);
 }
 
 export async function searchReivewByMe(option) {
-  const query = {
+  const query = stringify({
     page: option.page,
     size: option.size,
-    sort: [...option.sort],
-  };
+  });
 
-  return await axiosInstance.get(`/web/v1/review/search-me?${stringify(query)}`);
+  return await axiosInstance.get(`/web/v1/review/search-me?${query}`);
 }

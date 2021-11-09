@@ -1,6 +1,6 @@
 import { searchTattooAPI } from 'api/search';
 
-export const TC1015 = () => {
+export const FR1010_1 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -32,14 +32,13 @@ export const TC1015 = () => {
 
   return {
     id: 'FR-1010',
-    tid: 'TC-1015',
     desc: '검색 필터를 설정하여 목록을 조회한다. -> 지역을 서울로 설정하여 조회한다.',
     condition: '',
     execute,
   }
 }
 
-export const TC1016 = () => {
+export const FR1010_2 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -71,14 +70,13 @@ export const TC1016 = () => {
 
   return {
     id: 'FR-1010',
-    tid: 'TC-1016',
     desc: '검색 필터를 설정하여 목록을 조회한다. -> 장르를 반영구로 설정하여 조회한다.',
     condition: '',
     execute,
   }
 }
 
-export const TC1017 = () => {
+export const FR1010_3 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -110,14 +108,13 @@ export const TC1017 = () => {
 
   return {
     id: 'FR-1010',
-    tid: 'TC-1017',
     desc: '검색 필터를 설정하여 목록을 조회한다. -> 주제를 컴파스로 설정하여 조회한다.',
     condition: '',
     execute,
   }
 }
 
-export const TC1018 = () => {
+export const FR1010_4 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -149,14 +146,13 @@ export const TC1018 = () => {
 
   return {
     id: 'FR-1010',
-    tid: 'TC-1018',
     desc: '검색 필터를 설정하여 목록을 조회한다. -> 부위를 팔로 설정하여 조회한다.',
     condition: '',
     execute,
   }
 }
 
-export const TC1019 = () => {
+export const FR1010_5 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -188,7 +184,6 @@ export const TC1019 = () => {
 
   return {
     id: 'FR-1010',
-    tid: 'TC-1019',
     desc: '검색 필터를 설정하여 목록을 조회한다. -> 가격을 0~50000원으로 설정하여 조회한다.',
     condition: '',
     execute,

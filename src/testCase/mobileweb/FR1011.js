@@ -1,6 +1,6 @@
 import { searchTattooAPI } from 'api/search';
 
-export const TC1020= () => {
+export const FR1011_1 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -32,14 +32,13 @@ export const TC1020= () => {
 
   return {
     id: 'FR-1011',
-    tid: 'TC-1020',
     desc: '부가 정보를 설정하여 목록을 조회한다. -> 할인 이벤트',
     condition: '',
     execute,
   }
 }
 
-export const TC1021 = () => {
+export const FR1011_2 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -71,14 +70,13 @@ export const TC1021 = () => {
 
   return {
     id: 'FR-1011',
-    tid: 'TC-1021',
     desc: '부가 정보를 설정하여 목록을 조회한다. -> 카드 결제',
     condition: '',
     execute,
   }
 }
 
-export const TC1022 = () => {
+export const FR1011_3 = () => {
   const query = {
     keyword: null,
     page: 1,
@@ -110,7 +108,6 @@ export const TC1022 = () => {
 
   return {
     id: 'FR-1011',
-    tid: 'TC-1022',
     desc: '부가 정보를 설정하여 목록을 조회한다. -> 당일 예약',
     condition: '',
     execute,

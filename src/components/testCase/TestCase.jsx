@@ -1,14 +1,12 @@
 import { useState, useCallback } from 'react';
-
-import { createTestCase } from 'testCase/createTestCase';
 import TableRow from '../table/TableRow';
 
 export default function TestCase(props) {
-  const { testCaseId, option } = props;
+  const { testCaseId, createTestCase } = props;
   const [error, setError] = useState(null);
   const [input, setInput] = useState(null);
   const [output, setoutput] = useState(null);
-  const testCase = createTestCase(testCaseId, option);
+  const testCase = createTestCase();
 
   const handleClick = useCallback(() => {
     const { execute } = testCase ?? {};
@@ -37,12 +35,12 @@ export default function TestCase(props) {
     return null;
   }
 
-  const { id, tid, desc, condition } = testCase;
+  const { id, desc, condition } = testCase;
 
   return (
     <TableRow
       id={id}
-      tid={tid}
+      tid={testCaseId}
       desc={desc}
       condition={condition}
       input={input}

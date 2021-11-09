@@ -2,7 +2,7 @@ import { loginUserByEmail } from 'api/__fixtures__/user';
 import { searchTattooAPI } from 'api/search';
 import { getFavoriteTattooAPI, toggleFavoriteTattooAPI } from 'api/favorite';
 
-export const TC1025= () => {
+export const FR1014_1 = () => {
   const query = {
     keyword: '장미',
     page: 1,
@@ -34,14 +34,13 @@ export const TC1025= () => {
 
   return {
     id: 'FR-1014',
-    tid: 'TC-1025',
     desc: '검색어로 목록을 조회한다. -> 검색어: 장미',
     condition: '',
     execute,
   }
 }
 
-export const TC1026 = () => {
+export const FR1014_2 = () => {
   const query = {
     keyword: '장미',
     page: 1,
@@ -87,18 +86,16 @@ export const TC1026 = () => {
 
   return {
     id: 'FR-1014',
-    tid: 'TC-1026',
     desc: '선택한 타투 좋아요를 클릭한다.',
     condition: '',
     execute,
   }
 }
 
-export const TC1027= () => {
+export const FR1014_3 = () => {
   const query = {
     page: 1,
     size: 20,
-    sort: ['desc'],
   };
 
   const execute = async () => {
@@ -117,7 +114,6 @@ export const TC1027= () => {
 
   return {
     id: 'FR-1014',
-    tid: 'TC-1027',
     desc: '선택한 타투가 좋아요 목록에 추가되었는지 좋아요 목록을 조회한다.',
     condition: '',
     execute,

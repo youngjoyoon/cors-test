@@ -63,7 +63,6 @@ export async function getTattooListByTottooistAPI(option) {
   const query = stringify({
     page: option.page,
     size: option.size,
-    sort: [...option.sort],
   });
 
   return await axiosInstance.get(`/web/v1/tattoo/search-tattooist/${option.tattooistId}?${query}`);
@@ -73,7 +72,6 @@ export async function getRecentTattooAPI(option) {
   const query = stringify({
     page: option.page,
     size: option.size,
-    sort: [...option.sort],
   });
 
   return await axiosInstance.get(`/web/v1/tattoo/search-recently?${query}`);
@@ -87,7 +85,6 @@ export async function getEstimateTattooAPI(option) {
   const query = stringify({
     page: option.page,
     size: option.size,
-    sort: [...option.sort],
   });
 
   return await axiosInstance.get(`/web/v1/tattoo/search-estimate/${option.estimateRequestId}?${query}`);

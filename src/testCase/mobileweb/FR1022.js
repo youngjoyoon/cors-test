@@ -1,7 +1,7 @@
 import { loginUserByEmail } from 'api/__fixtures__/user';
 import { createReviewAPI } from 'api/review';
 
-export const TC1049 = () => {
+export const FR1022_1 = () => {
   const requestBody = {
     tattooistId: 7,
     starSatisfaction: 4,
@@ -32,7 +32,6 @@ export const TC1049 = () => {
 
   return {
     id: 'FR-1022',
-    tid: 'TC-1049',
     desc: '리뷰를 등록한다',
     condition: '',
     execute,

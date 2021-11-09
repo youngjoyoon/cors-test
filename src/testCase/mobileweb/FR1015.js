@@ -3,11 +3,10 @@ import { loginUserByEmail } from 'api/__fixtures__/user';
 import { getRecentTattooAPI } from 'api/tattoo';
 import { getFavoriteTattooAPI, toggleFavoriteTattooAPI } from 'api/favorite';
 
-export const TC1028= () => {
+export const FR1015_1 = () => {
   const query = {
     page: 1,
     size: 20,
-    sort: ['desc'],
   };
 
   const execute = async () => {  
@@ -23,18 +22,16 @@ export const TC1028= () => {
 
   return {
     id: 'FR-1015',
-    tid: 'TC-1028',
     desc: '최근 등록된 타투 목록을 조회한다. ',
     condition: '',
     execute,
   }
 }
 
-export const TC1029 = () => {
+export const FR1015_2 = () => {
   const query = {
     page: 1,
     size: 20,
-    sort: ['desc'],
   };
 
   const execute = async () => {
@@ -64,18 +61,16 @@ export const TC1029 = () => {
 
   return {
     id: 'FR-1015',
-    tid: 'TC-1029',
     desc: '선택한 타투 좋아요를 클릭한다.',
     condition: '',
     execute,
   }
 }
 
-export const TC1030= () => {
+export const FR1015_3 = () => {
   const query = {
     page: 1,
     size: 20,
-    sort: ['desc'],
   };
 
   const execute = async () => {
@@ -94,8 +89,23 @@ export const TC1030= () => {
 
   return {
     id: 'FR-1015',
-    tid: 'TC-1030',
     desc: '선택한 타투가 좋아요 목록에 추가되었는지 좋아요 목록을 조회한다.',
+    condition: '',
+    execute,
+  }
+}
+
+export const FR1015_4 = () => {
+  const execute = async () => {
+    return {
+      input: null,
+      output: null,
+    }
+  }
+
+  return {
+    id: 'FR-1015',
+    desc: '(미테스트) 지역, 장르 필터를 적용하여 조회한다.',
     condition: '',
     execute,
   }

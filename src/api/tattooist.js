@@ -7,6 +7,7 @@ export async function getTattooistAPI(option) {
 
 export async function createTattooistAPI(option) {
   const data = {
+    name: option.name,
     sidoAddress: option.sidoAddress,
     sggAddress: option.sggAddress,
     detailAddress: option.detailAddress,
@@ -19,10 +20,11 @@ export async function createTattooistAPI(option) {
     termsAgreement: option.termsAgreement,
   };
 
-  return await axiosInstance.post(`/web/v1/tattooist/${option.tattooistId}`, data);
+  return await axiosInstance.post(`/web/v1/tattooist`, data);
 }
 
 export async function modifyTattooistAPI(option) {
+  const query = stringify({ tattooistId: option.tattooistId });
   const data = {
     sidoAddress: option.sidoAddress,
     sggAddress: option.sggAddress,
@@ -36,14 +38,16 @@ export async function modifyTattooistAPI(option) {
     profile: option.profile,
   };
 
-  return await axiosInstance.put(`/web/v1/tattooist/${option.tattooistId}`, data);
+  return await axiosInstance.put(`/web/v1/tattooist/${option.tattooistId}?${query}`, data);
 }
 
 export async function deleteTattooistAPI(option) {
-  return await axiosInstance.delete(`/web/v1/tattooist/${option.tattooistId}`);
+  const query = stringify({ tattooistId: option.tattooistId });
+
+  return await axiosInstance.delete(`/web/v1/tattooist/${option.tattooistId}?${query}`);
 }
 
-export async function createattooistConsultHistoryAPI(option) {
+export async function createTatooistConsultHistoryAPI(option) {
   const data = {
     type: option.type,
     targetId: option.targetId,
@@ -64,7 +68,6 @@ export async function searchTattooistByConsult(option) {
   const query = stringify({
     page: option.page,
     size: option.size,
-    sort: [...option.sort],
   });
 
   return await axiosInstance.get(`/web/v1/tattooist/search-by-consulting?${query}`);
@@ -79,7 +82,6 @@ export async function searchTattooistByName(option) {
     tattooistName: option.tattooistName,
     page: option.page,
     size: option.size,
-    sort: [...option.sort],
   });
 
   return await axiosInstance.get(`/web/v1/tattooist/search-by-name?${query}`);

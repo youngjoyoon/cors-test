@@ -2,7 +2,7 @@ import { termsSearchAPI, termsAgreeAPI } from 'api/terms';
 import { userFixtureByEmail } from 'api/__fixtures__/user';
 
 // 약관 조회 - 회원가입 약관
-export const TC1005 = () => {
+export const FR1005_1 = () => {
   const payload = {
     type: 'JOIN',
     latest: true,
@@ -21,7 +21,6 @@ export const TC1005 = () => {
 
   return {
     id: 'FR-1005',
-    tid: 'TC-1005',
     desc: '회원가입 약관을 조회한다.',
     condition: '',
     execute,
@@ -29,7 +28,7 @@ export const TC1005 = () => {
 }
 
 // 약관 조회 - 개인정보보호 약관
-export const TC1006 = () => {
+export const FR1005_2 = () => {
   const payload = {
     type: 'PRIVACY',
     latest: true,
@@ -48,7 +47,6 @@ export const TC1006 = () => {
 
   return {
     id: 'FR-1005',
-    tid: 'TC-1006',
     desc: '개인정보보호 약관을 조회한다.',
     condition: '',
     execute,
@@ -56,7 +54,7 @@ export const TC1006 = () => {
 }
 
 // 회원가입 약관 동의
-export const TC1007 = () => {
+export const FR1005_3 = () => {
   const userFixture = userFixtureByEmail('qa01@tattoo.com');
   const payload = {
     type: 'JOIN',
@@ -90,7 +88,6 @@ export const TC1007 = () => {
 
   return {
     id: 'FR-1005',
-    tid: 'TC-1007',
     desc: '회원가입 약관을 동의 처리한다',
     condition: '회원가입 후에만 가능하다.',
     execute,

@@ -30,7 +30,6 @@ export async function searchRecentlyTattooAPI(option) {
   const query = stringify({
     page: option.page,
     size: option.size,
-    sort: option.sort,
   });
 
   return await axiosInstance.get(`/web/v1/search/search-recently-tattoo?${query}`);
