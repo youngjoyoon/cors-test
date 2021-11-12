@@ -45,7 +45,7 @@ export default function TestCase(props) {
       condition={condition}
       input={input}
       output={output}
-      hasError={Boolean(error)}
+      error={error}
       onClick={handleClick}
     />
   );

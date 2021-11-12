@@ -27,3 +27,19 @@ export const FR1034_1 = () => {
     execute,
   }
 }
+
+export const FR1034_2 = () => {
+  const execute = async () => {
+    return {
+      input: null,
+      output: null, 
+    }
+  }
+
+  return {
+    id: 'FR-1034',
+    desc: '1:1 대화 시작하기를 클릭한다.',
+    condition: '',
+    execute,
+  }
+}

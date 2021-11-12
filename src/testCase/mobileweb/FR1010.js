@@ -8,14 +8,14 @@ export const FR1010_1 = () => {
   };
   const requestBody = {
     filterAreaTypes: ['SEOUL'],
-    genreTypes: [],
-    subjectTypes: [],
-    partTypes: [],
+    genreTypes: null,
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {
@@ -45,15 +45,15 @@ export const FR1010_2 = () => {
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
+    filterAreaTypes: null,
     genreTypes: ['SEMI_PERMANENT'],
-    subjectTypes: [],
-    partTypes: [],
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {
@@ -83,15 +83,15 @@ export const FR1010_3 = () => {
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
-    genreTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
     subjectTypes: ['COMPASS'],
-    partTypes: [],
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {
@@ -121,15 +121,15 @@ export const FR1010_4 = () => {
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
-    genreTypes: [],
-    subjectTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
+    subjectTypes: null,
     partTypes: ['ARM'],
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {
@@ -159,15 +159,15 @@ export const FR1010_5 = () => {
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
-    genreTypes: [],
-    subjectTypes: [],
-    partTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 50000,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {

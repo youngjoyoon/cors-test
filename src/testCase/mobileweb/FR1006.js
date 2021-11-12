@@ -26,6 +26,7 @@ export const FR1006_2 = () => {
   const payload = {
     nickName: '수정용 닉네임',
     pushAgreement: true,
+    profileImageUrl: 'newprofileurl',
   };
   const execute = async () => {
     const logout = loginUserByEmail('qa01@tattoo.com');

@@ -4,7 +4,7 @@ export const FR1051_1 = () => {
   const query = {
     tattooistId: 7,
     periodType: 'ALL',
-    sort: 'LIKE_DESC',
+    sortType: 'LIKE_DESC',
     page: 1,
     size: 20,
   };

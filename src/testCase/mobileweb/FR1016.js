@@ -4,8 +4,8 @@ import { searchRankTattooAPI } from 'api/searchRank';
 export const FR1016_1 = () => {
   const query = {
     periodType: 'REALTIME',
-    filterAreaTypes: [],
-    genreTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
     page: 1,
     size: 20,
   };
@@ -33,7 +33,7 @@ export const FR1016_2 = () => {
   const query = {
     periodType: 'REALTIME',
     filterAreaTypes: ['SEOUL'],
-    genreTypes: [],
+    genreTypes: null,
     page: 1,
     size: 20,
   };
@@ -60,7 +60,7 @@ export const FR1016_2 = () => {
 export const FR1016_3 = () => {
   const query = {
     periodType: 'REALTIME',
-    filterAreaTypes: [],
+    filterAreaTypes: null,
     genreTypes: ['SEMI_PERMANENT'],
     page: 1,
     size: 20,

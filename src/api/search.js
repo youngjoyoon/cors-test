@@ -8,10 +8,10 @@ export async function searchTattooAPI(option) {
     size: option.size,
   };
   const data = {
-    filterAreaTypes: [...option.filterAreaTypes],
-    genreTypes: [...option.genreTypes],
-    subjectTypes: [...option.subjectTypes],
-    partTypes: [...option.partTypes],
+    filterAreaTypes: option.filterAreaTypes,
+    genreTypes: option.genreTypes,
+    subjectTypes: option.subjectTypes,
+    partTypes: option.partTypes,
     priceMin: option.priceMin,
     priceMax: option.priceMax,
     promotion: option.promotion,
@@ -33,6 +33,15 @@ export async function searchRecentlyTattooAPI(option) {
   });
 
   return await axiosInstance.get(`/web/v1/search/search-recently-tattoo?${query}`);
+}
+
+export async function searchRecentlyTattooistAPI(option) {
+  const query = stringify({
+    page: option.page,
+    size: option.size,
+  });
+
+  return await axiosInstance.get(`/web/v1/search/search-recently-tattooist?${query}`);
 }
 
 export async function searchHotWordAPI() {

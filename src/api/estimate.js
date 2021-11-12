@@ -40,6 +40,7 @@ export async function deleteEstimateProposerAPI(option) {
 
 export async function searchEstimateProposerByMeAPI(option) {
   const query = stringify({
+    pageName: option.pageName,
     page: option.page,
     size: option.size,
   });
@@ -83,4 +84,12 @@ export async function searchEstimateRequestFilterAPI() {
 
 export async function searchEstimateRequestByMeAPI() {
   return await axiosInstance.get(`/web/v1/estimate/request/search-by-me`);
+}
+
+export async function pauseRequestAPI(option) {
+  return await axiosInstance.put(`/web/v1/estimate/request/${option.estimateRequestId}/request-pause`);
+}
+
+export async function deleteRequestAPI(option) {
+  return await axiosInstance.delete(`/web/v1/estimate/request/${option.estimateRequestId}`);
 }

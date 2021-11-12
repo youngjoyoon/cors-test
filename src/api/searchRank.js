@@ -4,8 +4,8 @@ import { axiosInstance } from 'infrastructure/axios';
 export async function searchRankTattooAPI(option) {
   const query = stringify({
     periodType: option.periodType,
-    filterAreaTypes: [...option.filterAreaTypes],
-    genreTypes: [...option.genreTypes],
+    filterAreaTypes: option.filterAreaTypes,
+    genreTypes: option.genreTypes,
     page: option.page,
     size: option.size,
   });
@@ -16,8 +16,8 @@ export async function searchRankTattooAPI(option) {
 export async function searchRankTattooistAPI(option) {
   const query = stringify({
     periodType: option.periodType,
-    filterAreaTypes: [...option.filterAreaTypes],
-    genreTypes: [...option.genreTypes],
+    filterAreaTypes: option.filterAreaTypes,
+    genreTypes: option.genreTypes,
     page: option.page,
     size: option.size,
   });

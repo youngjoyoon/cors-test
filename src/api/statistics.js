@@ -29,7 +29,7 @@ export async function getStatisticsHotTattooAPI(option) {
   const query = stringify({
     tattooistId: option.tattooistId,
     periodType: option.periodType,
-    sort: option.sort,
+    sortType: option.sortType,
     page: option.page,
     size: option.size,
   });

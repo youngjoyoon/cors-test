@@ -1,7 +1,110 @@
 import { loginUserByEmail } from 'api/__fixtures__/user';
-import { createTattooistAPI, getTattooistMainAPI } from 'api/tattooist';
+import { getMemberSettingByMe, modifyProfileAPI } from 'api/memberSetting';
+import { checkDuplicateName, createTattooistAPI, getTattooistMainAPI } from 'api/tattooist';
 
 export const FR1043_1 = () => {
+  const requestBody = {
+    profileType: 'TATTOOIST'
+  };
+
+  const execute = async () => {
+    const logout = loginUserByEmail('qa02@tattoo.com');
+    const { data } = await modifyProfileAPI(requestBody);
+
+    logout();
+
+    return {
+      input: {
+        requestBody,
+      },
+      output: data, 
+    }
+  }
+
+  return {
+    id: 'FR-1043',
+    desc: '타투이스트로 전환한다.',
+    condition: '',
+    execute,
+  }
+}
+
+export const FR1043_2 = () => {
+  const requestBody = {
+    profileType: 'CUSTOMER'
+  };
+
+  const execute = async () => {
+    const logout = loginUserByEmail('qa02@tattoo.com');
+    const { data } = await modifyProfileAPI(requestBody);
+
+    logout();
+
+    return {
+      input: {
+        requestBody,
+      },
+      output: data, 
+    }
+  }
+
+  return {
+    id: 'FR-1043',
+    desc: '고객으로 전환한다.',
+    condition: '',
+    execute,
+  }
+}
+
+export const FR1043_3 = () => {
+  const execute = async () => {
+    const logout = loginUserByEmail('qa02@tattoo.com');
+    const { data } = await getMemberSettingByMe();
+
+    logout();
+
+    return {
+      input: null,
+      output: data,
+    }
+  }
+
+  return {
+    id: 'FR-1043',
+    desc: '현재 계정이 어떤 타입인지 확인한다.',
+    condition: '',
+    execute,
+  }
+}
+
+export const FR1043_4 = () => {
+  const query = {
+    name: 'qa02 계정의 새로운 타투이스트 페이지',
+  };
+
+  const execute = async () => {
+    const logout = loginUserByEmail('qa02@tattoo.com');
+    const { data } = await checkDuplicateName(query);
+
+    logout();
+
+    return {
+      input: {
+        query,
+      },
+      output: data, 
+    }
+  }
+
+  return {
+    id: 'FR-1043',
+    desc: '개설할 타투이스트 페이지의 이름 중복을 검사한다.',
+    condition: '',
+    execute,
+  }
+}
+
+export const FR1043_5 = () => {
   const requestBody = {
     name: 'qa02 계정의 새로운 타투이스트 페이지',
     sidoAddress: "SEOUL",
@@ -46,7 +149,7 @@ export const FR1043_1 = () => {
   }
 }
 
-export const FR1043_2 = () => {
+export const FR1043_6 = () => {
   const execute = async () => {
     const logout = loginUserByEmail('qa02@tattoo.com');
     const { data } = await getTattooistMainAPI();

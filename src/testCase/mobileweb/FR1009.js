@@ -1,20 +1,24 @@
-import { modifyMemberSettingAppPushAPI } from 'api/memberSetting';
+import { modifyMemberSettingEstimateFilterAppPushAPI } from 'api/memberSetting';
 import { loginUserByEmail } from 'api/__fixtures__/user';
 
 export const FR1009_1 = () => {
   const payload = {
-    appPush: true,
+    designTypes: [],
+    genreTypes: [],
+    filterAreaTypes: [],
+    use: true,
   };
 
   const execute = async () => {
     const logout = loginUserByEmail('qa01@tattoo.com');
-    const { data } = await modifyMemberSettingAppPushAPI(payload);
+
+    const { data } = await modifyMemberSettingEstimateFilterAppPushAPI(payload);
 
     logout();
 
     return {
       input: {
-        query: payload,
+        requestBody: payload,
       },
       output: data, 
     }

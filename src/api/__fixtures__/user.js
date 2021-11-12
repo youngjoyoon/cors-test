@@ -30,7 +30,7 @@ const users = [
     email: 'admin@tattoo.com',
     desc: '어드민',
     uuid: '',
-    webToken: '',
+    webToken: 'HznsuXsp2aI9rHsa5wqTmBhDkIOS85A/2+l6TG/mCeDuMHJuAJ/i29Dp7CBCyoN1TKcHgasEyXEr+gf2DvtouGUlmLGRuuLjcFo3X7rARvNPMgBW83JEVZevdDI6jp2YdjOabrIgydqVzZ6RdZYnCNKpOEda5iAUqSwL9NKshia47PxrxMsEM1obGH95ylvb3e36DMF9BCQBHG9L++gLp9Ug1EivMf0gFVvlrL6lWug=',
     appToken: '',
   },
 ]

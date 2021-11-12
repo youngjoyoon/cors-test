@@ -27,15 +27,15 @@ export const FR1036_2 = () => {
       size: 2,
     };
     const requestBody = {
-      filterAreaTypes: [],
-      genreTypes: [],
-      subjectTypes: [],
-      partTypes: [],
+      filterAreaTypes: null,
+      genreTypes: null,
+      subjectTypes: null,
+      partTypes: null,
       priceMin: 0,
       priceMax: 0,
-      promotion: false,
-      installmentPayment: false,
-      sameDayReservation: false,
+      promotion: null,
+      installmentPayment: null,
+      sameDayReservation: null,
     };
 
     const { data } = await searchReviewByKeywordAPI({ ...query, ...requestBody });
@@ -65,15 +65,15 @@ export const FR1036_3 = () => {
       size: 2,
     };
     const requestBody = {
-      filterAreaTypes: [],
-      genreTypes: [],
-      subjectTypes: [],
-      partTypes: [],
+      filterAreaTypes: null,
+      genreTypes: null,
+      subjectTypes: null,
+      partTypes: null,
       priceMin: 0,
       priceMax: 0,
-      promotion: false,
-      installmentPayment: false,
-      sameDayReservation: false,
+      promotion: null,
+      installmentPayment: null,
+      sameDayReservation: null,
     };
 
     const { data } = await searchReviewByKeywordAPI({ ...query, ...requestBody });
@@ -104,14 +104,14 @@ export const FR1036_4 = () => {
     };
     const requestBody = {
       filterAreaTypes: ['SEOUL'],
-      genreTypes: [],
-      subjectTypes: [],
-      partTypes: [],
+      genreTypes: null,
+      subjectTypes: null,
+      partTypes: null,
       priceMin: 0,
       priceMax: 0,
-      promotion: false,
-      installmentPayment: false,
-      sameDayReservation: false,
+      promotion: null,
+      installmentPayment: null,
+      sameDayReservation: null,
     };
 
     const { data } = await searchReviewByKeywordAPI({ ...query, ...requestBody });
@@ -141,15 +141,15 @@ export const FR1036_5 = () => {
       size: 2,
     };
     const requestBody = {
-      filterAreaTypes: [],
+      filterAreaTypes: null,
       genreTypes: ['SEMI_PERMANENT'],
-      subjectTypes: [],
-      partTypes: [],
+      subjectTypes: null,
+      partTypes: null,
       priceMin: 0,
       priceMax: 0,
-      promotion: false,
-      installmentPayment: false,
-      sameDayReservation: false,
+      promotion: null,
+      installmentPayment: null,
+      sameDayReservation: null,
     };
 
     const { data } = await searchReviewByKeywordAPI({ ...query, ...requestBody });
@@ -179,15 +179,15 @@ export const FR1036_6 = () => {
       size: 2,
     };
     const requestBody = {
-      filterAreaTypes: [],
-      genreTypes: [],
+      filterAreaTypes: null,
+      genreTypes: null,
       subjectTypes: ['BEAUTY'],
-      partTypes: [],
+      partTypes: null,
       priceMin: 0,
       priceMax: 0,
-      promotion: false,
-      installmentPayment: false,
-      sameDayReservation: false,
+      promotion: null,
+      installmentPayment: null,
+      sameDayReservation: null,
     };
 
     const { data } = await searchReviewByKeywordAPI({ ...query, ...requestBody });
@@ -217,15 +217,15 @@ export const FR1036_7 = () => {
       size: 2,
     };
     const requestBody = {
-      filterAreaTypes: [],
-      genreTypes: [],
-      subjectTypes: [],
+      filterAreaTypes: null,
+      genreTypes: null,
+      subjectTypes: null,
       partTypes: ['ARM'],
       priceMin: 0,
       priceMax: 0,
-      promotion: false,
-      installmentPayment: false,
-      sameDayReservation: false,
+      promotion: null,
+      installmentPayment: null,
+      sameDayReservation: null,
     };
 
     const { data } = await searchReviewByKeywordAPI({ ...query, ...requestBody });
@@ -242,44 +242,6 @@ export const FR1036_7 = () => {
   return {
     id: 'FR-1036',
     desc: '부위를 팔로 설정하여 리뷰를 조회한다.',
-    condition: '',
-    execute,
-  }
-}
-
-export const FR1036_8 = () => {
-  const execute = async () => {
-    const query = {
-      keyword: null,
-      page: 1,
-      size: 2,
-    };
-    const requestBody = {
-      filterAreaTypes: [],
-      genreTypes: [],
-      subjectTypes: [],
-      partTypes: [],
-      priceMin: 10,
-      priceMax: 100000,
-      promotion: false,
-      installmentPayment: false,
-      sameDayReservation: false,
-    };
-
-    const { data } = await searchReviewByKeywordAPI({ ...query, ...requestBody });
-
-    return {
-      input: {
-        query,
-        requestBody,
-      },
-      output: data, 
-    }
-  }
-
-  return {
-    id: 'FR-1036',
-    desc: '가격을 10-100000으로 설정하여 조회한다.',
     condition: '',
     execute,
   }

@@ -5,8 +5,8 @@ import { getFavoriteTattooistAPI, toggleFavoriteTattooistAPI } from 'api/favorit
 export const FR1017_1 = () => {
   const query = {
     periodType: 'REALTIME',
-    filterAreaTypes: [],
-    genreTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
     page: 1,
     size: 20,
   };
@@ -34,7 +34,7 @@ export const FR1017_2 = () => {
   const query = {
     periodType: 'REALTIME',
     filterAreaTypes: ['SEOUL'],
-    genreTypes: [],
+    genreTypes: null,
     page: 1,
     size: 20,
   };
@@ -61,7 +61,7 @@ export const FR1017_2 = () => {
 export const FR1017_3 = () => {
   const query = {
     periodType: 'REALTIME',
-    filterAreaTypes: [],
+    filterAreaTypes: null,
     genreTypes: ['SEMI_PERMANENT'],
     page: 1,
     size: 20,

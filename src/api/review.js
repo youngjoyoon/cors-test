@@ -36,10 +36,10 @@ export async function searchReviewByKeywordAPI(option) {
     size: option.size,
   });
   const data = {
-    filterAreaTypes: [...option.filterAreaTypes],
-    genreTypes: [...option.genreTypes],
-    subjectTypes: [...option.subjectTypes],
-    partTypes: [...option.partTypes],
+    filterAreaTypes: option.filterAreaTypes,
+    genreTypes: option.genreTypes,
+    subjectTypes: option.subjectTypes,
+    partTypes: option.partTypes,
     priceMin: option.priceMin,
     priceMax: option.priceMax,
     promotion: option.promotion,

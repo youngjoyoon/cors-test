@@ -7,15 +7,15 @@ export const FR1021_1 = () => {
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
-    genreTypes: [],
-    subjectTypes: [],
-    partTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {
@@ -46,14 +46,14 @@ export const FR1021_2 = () => {
   };
   const requestBody = {
     filterAreaTypes: ['SEOUL'],
-    genreTypes: [],
-    subjectTypes: [],
-    partTypes: [],
+    genreTypes: null,
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {
@@ -83,15 +83,15 @@ export const FR1021_3 = () => {
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
+    filterAreaTypes: null,
     genreTypes: ['SEMI_PERMANENT'],
-    subjectTypes: [],
-    partTypes: [],
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {
@@ -121,15 +121,15 @@ export const FR1021_4 = () => {
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
-    genreTypes: [],
-    subjectTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
+    subjectTypes: null,
     partTypes: ['ARM'],
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {

@@ -1,6 +1,14 @@
 import { stringify } from 'infrastructure/query';
 import { axiosInstance } from 'infrastructure/axios';
 
+export async function checkDuplicateName(option) {
+  const query = stringify({
+    name: option.name
+  });
+
+  return await axiosInstance.get(`/web/v1/tattooist/check-duplicate-name?${query}`);
+}
+
 export async function getTattooistAPI(option) {
   return await axiosInstance.get(`/web/v1/tattooist/${option.tattooistId}`);
 }

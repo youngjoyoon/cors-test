@@ -4,20 +4,20 @@ import { getFavoriteTattooAPI, toggleFavoriteTattooAPI } from 'api/favorite';
 
 export const FR1014_1 = () => {
   const query = {
-    keyword: '장미',
+    keyword: '반영구',
     page: 1,
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
-    genreTypes: [],
-    subjectTypes: [],
-    partTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {
@@ -34,7 +34,7 @@ export const FR1014_1 = () => {
 
   return {
     id: 'FR-1014',
-    desc: '검색어로 목록을 조회한다. -> 검색어: 장미',
+    desc: '검색어로 목록을 조회한다. -> 검색어: 반영구',
     condition: '',
     execute,
   }
@@ -42,20 +42,20 @@ export const FR1014_1 = () => {
 
 export const FR1014_2 = () => {
   const query = {
-    keyword: '장미',
+    keyword: '반영구',
     page: 1,
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
-    genreTypes: [],
-    subjectTypes: [],
-    partTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
-    sameDayReservation: false,
+    promotion: null,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
 

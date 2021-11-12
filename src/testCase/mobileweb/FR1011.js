@@ -7,15 +7,15 @@ export const FR1011_1 = () => {
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
-    genreTypes: [],
-    subjectTypes: [],
-    partTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
     promotion: true,
-    installmentPayment: false,
-    sameDayReservation: false,
+    installmentPayment: null,
+    sameDayReservation: null,
   };
 
   const execute = async () => {
@@ -45,15 +45,15 @@ export const FR1011_2 = () => {
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
-    genreTypes: [],
-    subjectTypes: [],
-    partTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
+    promotion: null,
     installmentPayment: true,
-    sameDayReservation: false,
+    sameDayReservation: null,
   };
 
   const execute = async () => {
@@ -83,14 +83,14 @@ export const FR1011_3 = () => {
     size: 20,
   };
   const requestBody = {
-    filterAreaTypes: [],
-    genreTypes: [],
-    subjectTypes: [],
-    partTypes: [],
+    filterAreaTypes: null,
+    genreTypes: null,
+    subjectTypes: null,
+    partTypes: null,
     priceMin: 0,
     priceMax: 0,
-    promotion: false,
-    installmentPayment: false,
+    promotion: null,
+    installmentPayment: null,
     sameDayReservation: true,
   };
 

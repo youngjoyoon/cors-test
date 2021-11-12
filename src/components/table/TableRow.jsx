@@ -1,9 +1,17 @@
 import styles from './TableRow.module.scss';
 
 export default function TableRow(props) {
-  const { id, tid, desc, condition, input, output, hasError, onClick } = props;
+  const { id, tid, desc, condition, input, output, error, onClick } = props;
   const { pathValue, query, requestBody } = input ?? {};
-  const outputData = output ? JSON.stringify(output, null, 4) : null;
+  const hasError = Boolean(error);
+
+  let outputData;
+
+  if (hasError) {
+    outputData = error.message;
+  } else {
+    outputData = output ? JSON.stringify(output, null, 4) : null;
+  }
 
   const handleClick = () => {
     onClick?.();
