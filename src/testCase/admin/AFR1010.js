@@ -63,7 +63,7 @@ export const AFR1010_2 = () => {
 
 export const AFR1010_3 = () => {
   const requestBody = {
-    memberId: 2,
+    memberId: 3,
     chargeAmount: 10000,
     bonusAmount: 0,
   }

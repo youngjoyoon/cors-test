@@ -1,18 +1,17 @@
-import { modifyMemberSettingEstimateFilterAppPushAPI } from 'api/memberSetting';
+import { modifyMemberAPI } from 'api/member';
 import { loginUserByEmail } from 'api/__fixtures__/user';
 
 export const FR1009_1 = () => {
   const payload = {
-    designTypes: [],
-    genreTypes: [],
-    filterAreaTypes: [],
-    use: true,
+    "nickName": "수정용 닉네임",
+    "pushAgreement": true,
+    "profileImageUrl": "newprofileurl"
   };
 
   const execute = async () => {
     const logout = loginUserByEmail('qa01@tattoo.com');
 
-    const { data } = await modifyMemberSettingEstimateFilterAppPushAPI(payload);
+    const { data } = await modifyMemberAPI(payload);
 
     logout();
 

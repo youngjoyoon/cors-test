@@ -19,7 +19,7 @@ export async function chargeCashForce(option) {
     bonusAmount: option.bonusAmount,
   };
 
-  return await adminAxiosInstance.post(`/web/v1/cash/${option.cashHistoryId}/cash-charge-force`, data);
+  return await adminAxiosInstance.post(`/web/v1/cash/cash-charge-force`, data);
 }
 
 export async function refundCash(option) {

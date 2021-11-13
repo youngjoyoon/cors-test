@@ -3,7 +3,7 @@ import { searchCashHistoryByMe } from 'api/cash';
 
 export const FR1061_1 = () => {
   const query = {
-    searchType: 'ALL',
+    searchType: 'USE',
     recently: true,
     remain: true,
     from: '20211001',

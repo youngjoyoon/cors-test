@@ -3,8 +3,7 @@ import { searchTattooist } from 'api/admin/tattooist';
 
 export const AFR1006_1 = () => {
   const query = {
-    type: 'NONE',
-    value: '',
+    name: '',
     page: 1,
     size: 20,
   };
@@ -33,8 +32,7 @@ export const AFR1006_1 = () => {
 
 export const AFR1006_2 = () => {
   const query = {
-    type: 'NAME',
-    value: '타투이스트-1',
+    name: '타투이스트-1',
     page: 1,
     size: 20,
   };

@@ -52,7 +52,7 @@ export const FR0001_2 = () => {
 
 export const FR0001_3 = () => {
   const pathValue = {
-    boardContentId: 1,
+    boardContentId: 19,
   };
   const execute = async () => {
     const { data } = await getGuideDetail(pathValue);
