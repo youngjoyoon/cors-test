@@ -70,6 +70,8 @@ export async function getTattooListByTottooistAPI(option) {
 
 export async function getRecentTattooAPI(option) {
   const query = stringify({
+    filterAreaTypes: option.filterAreaTypes,
+    genreTypes: option.genreTypes,
     page: option.page,
     size: option.size,
   });

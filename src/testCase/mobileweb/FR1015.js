@@ -96,16 +96,27 @@ export const FR1015_3 = () => {
 }
 
 export const FR1015_4 = () => {
-  const execute = async () => {
+  const query = {
+    filterAreaTypes: ['GANGNAM'],
+    genreTypes: ['SEMI_PERMANENT'],
+    page: 1,
+    size: 20,
+  };
+
+  const execute = async () => {  
+    const { data } = await getRecentTattooAPI(query);
+
     return {
-      input: null,
-      output: null,
+      input: {
+        query,
+      },
+      output: data, 
     }
   }
 
   return {
     id: 'FR-1015',
-    desc: '(미테스트) 지역, 장르 필터를 적용하여 조회한다.',
+    desc: '최근 등록된 타투 - 지역, 장르 필터를 적용하여 조회한다.',
     condition: '',
     execute,
   }

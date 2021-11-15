@@ -3,7 +3,6 @@ import { searchTattooist } from 'api/admin/tattooist';
 
 export const AFR1006_1 = () => {
   const query = {
-    name: '',
     page: 1,
     size: 20,
   };
